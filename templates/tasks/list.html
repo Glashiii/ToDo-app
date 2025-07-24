@@ -1,0 +1,32 @@
+{% extends "tasks/_base-tasks.html" %}
+
+{% block content %}
+    
+    <form method="post" class="add-form">
+        {% csrf_token %}
+        {{ form.task_text }}         
+        <button class="btn" type="submit">Add</button>
+    </form>
+
+    <ul class="todo-ul">
+        {% for task in tasks %}
+            <li class="{% if not task.task_active %}undone{% endif %}">
+                <p class="task-text">{{ task.task_text|default:'(Nothing)' }}</p>
+                <div class="form-actions">
+                <form action="{% url 'toggle' task.pk %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button class="btn check">{% if task.task_active %}✔{% else %}○{% endif %}</button>
+                </form>
+                <form action="{% url 'delete' task.pk %}"
+                      method="post"
+                      style="display:inline;">
+                    {% csrf_token %}
+                    <button class="btn del" title="Delete">&times;</button>
+                </form>
+                </div>
+            </li>
+        {% empty %}
+            <li class="nothing">No any tasks</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
