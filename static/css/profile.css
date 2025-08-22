@@ -1,0 +1,76 @@
+:root {
+    --main: #6C71DB;
+    --foreground: #F5F5F5;
+    --light-main: #8E86A1;
+    --border-dull: #6F638B;
+    --dark: #2B2732;
+    --border: #595DB3;
+}
+
+.task-content {
+    display: flex;
+    width: 100%;
+}
+
+
+.card {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    color: var(--dark);
+}
+
+h1 {
+    margin: 25px 0 0;
+}
+
+.info {
+    margin: 0 0 25px;
+}
+
+.info-text {
+    margin: 0;
+    margin-top: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.panel {
+    display: none;
+    width: 60%;
+    margin: 15px 1rem 1rem;
+    border: 3px solid var(--border);
+    border-radius: 8px;
+}
+
+#panel-username{
+     /*background-color: var(--foreground);*/
+}
+
+.muted{
+    color: var(--border-dull);
+}
+
+.panel.active {
+    padding: 15px 1rem 1rem;
+    display: block;
+}
+
+#id_username{
+    border: 2px solid var(--border);
+    border-radius: 3px;
+}
+
+.btn {
+    font-family: "Heebo", sans-serif;
+    width: 20%;
+    border-radius: 3px;
+    border-width: 3px;
+    margin: 0 10px;
+}

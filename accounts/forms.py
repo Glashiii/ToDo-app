@@ -33,15 +33,12 @@ class SignUpForm(UserCreationForm):
         return user
 
 
-class ProfileForm(forms.ModelForm):
+
+
+class UsernameUpdateForm(forms.ModelForm):
     class Meta:
         model = get_user_model()
-        fields = ['username', 'email']
-        widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-input'}),
-            'email': forms.EmailInput(attrs={'class': 'form-input'}),
-        }
+        fields = ['username']
         labels = {
             'username': 'Username',
-            'email': 'E-mail',
         }

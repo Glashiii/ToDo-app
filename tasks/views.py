@@ -16,7 +16,7 @@ class TaskListCreateView(LoginRequiredMixin, FormMixin, ListView):
     context_object_name = 'tasks'
 
     form_class  = TaskForm
-    success_url = reverse_lazy('list')
+    success_url = reverse_lazy('tasks_list')
 
     def get_queryset(self):
         return Task.objects.filter(user=self.request.user)
@@ -43,14 +43,10 @@ def toggle_task_done(request, pk):
     task = get_object_or_404(Task, pk=pk, user=request.user)
     task.task_active = not task.task_active
     task.save()
-    return redirect('list')
+    return redirect('tasks_list')
 
 @require_POST
 def delete_task(request, pk):
     task = get_object_or_404(Task, pk=pk, user=request.user)  # или task_user
     task.delete()
-    return redirect('list')
-
-def profile(request):
-    template = loader.get_template("tasks/profile.html")
-    return HttpResponse(template.render({}, request))
+    return redirect('tasks_list')

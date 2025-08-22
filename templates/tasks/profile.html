@@ -1,4 +1,80 @@
 {% extends "tasks/_base-tasks.html" %}
 {% block content %}
-    <p>Will be done soon<p>
+    <div class="card" id="profile-root" data-active="{{ active_form|default_if_none:'' }}">
+        <h1>Profile</h1>
+
+        <div class="messages">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="msg {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="info">
+            <p class="info-text">Username: {{ request.user.username }}</p>
+            <p class="info-text">Email: {{ request.user.email|default:"—" }}</p>
+        </div>
+
+        <div class="actions">
+            <button type="button" class="btn" id="btn-username">Change username</button>
+            <button type="button" class="btn secondary" id="btn-password">Change password</button>
+        </div>
+
+        <div class="panel" id="panel-username">
+            <h3>Change username</h3>
+            <form method="post" action="">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="update_profile">
+                {{ username_form.non_field_errors }}
+                <div class="row">
+                    <div>
+                        {{ username_form.username.label_tag }}
+                        {{ username_form.username }}
+                        {{ username_form.username.errors }}
+                        {% if username_form.username.help_text %}
+                            <div class="muted">{{ username_form.username.help_text }}</div>{% endif %}
+                    </div>
+                </div>
+                <div style="margin-top: .5rem;">
+                    <button class="btn" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="panel" id="panel-password">
+            <h3>Change password</h3>
+            <form method="post" action="">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="change_password">
+                {{ password_form.non_field_errors }}
+                <div class="row">
+                    <div>
+                        {{ password_form.old_password.label_tag }}
+                        <br>
+                        {{ password_form.old_password }}
+                        {{ password_form.old_password.errors }}
+                    </div>
+                    <div>
+                        {{ password_form.new_password1.label_tag }}
+                        <br>
+                        {{ password_form.new_password1 }}
+                        {{ password_form.new_password1.errors }}
+                    </div>
+                    <div>
+                        {{ password_form.new_password2.label_tag }}
+                        <br>
+                        {{ password_form.new_password2 }}
+                        {{ password_form.new_password2.errors }}
+                    </div>
+                </div>
+                <div style="margin-top: .5rem;">
+                    <button class="btn secondary" type="submit">Update password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
 {% endblock %}
