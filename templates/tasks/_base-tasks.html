@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/tasks.css' %}">
-    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
-
+    {% block addstyles %}
+    {% endblock %}
     <title>Tasks</title>
 </head>
 

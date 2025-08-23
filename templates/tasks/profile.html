@@ -1,4 +1,9 @@
 {% extends "tasks/_base-tasks.html" %}
+{% load static %}
+{% block addstyles %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
 {% block content %}
     <div class="card" id="profile-root" data-active="{{ active_form|default_if_none:'' }}">
         <h1>Profile</h1>
