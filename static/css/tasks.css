@@ -42,7 +42,7 @@ nav{
     flex-direction: column;
 }
 
-a{
+a, #logout-btn {
     align-content: center;
     text-align: center;
     text-decoration: none;
@@ -55,9 +55,10 @@ a{
     border-style: solid;
     border-width: 0 3px 3px 3px;
     border-color: var(--border);
+    cursor: pointer;
 }
 
-a:hover{
+a:hover, #logout-btn:hover {
     background: var(--border);
     transition-duration: 0.2s;
 }
