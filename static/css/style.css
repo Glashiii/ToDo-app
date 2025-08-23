@@ -97,6 +97,16 @@ body {
 
 }
 
+.email-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+
+}
+.email-info p{
+    width: 70%;
+}
 
 
 

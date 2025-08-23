@@ -1,24 +1,53 @@
+
+from allauth.account.models import EmailAddress
 from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django import forms
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import FormView
-from django.contrib.auth import login, update_session_auth_hash
+
+
 from .forms import SignUpForm
-from django.urls import reverse_lazy
 
 
 class SignUpView(FormView):
     template_name = 'signup.html'
     form_class = SignUpForm
-    success_url = reverse_lazy('tasks_list')
+    success_url = reverse_lazy('account_email_verification_sent')
+    email = forms.EmailField(required=True, label='Email')
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password1', 'password2')
+
+    def clean_email(self):
+        email = self.cleaned_data['email'].lower()
+        if EmailAddress.objects.filter(email__iexact=email).exists() or User.objects.filter(email__iexact=email).exists():
+            raise forms.ValidationError('This e-mail is already registered.')
+
+        return email
 
     def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
-        return super().form_valid(form)
+        user = form.save(commit=False)
+        user.is_active = False
+        user.save()
 
+        if user.email:
+            email_address, _ = EmailAddress.objects.update_or_create(
+                user=user,
+                email=user.email,
+                defaults={'primary': True, 'verified': False},
+            )
+
+            email_address.send_confirmation(self.request, signup=True)
+
+
+        return redirect(self.get_success_url())
 
 from .forms import UsernameUpdateForm
 
@@ -27,7 +56,6 @@ class ProfileView(LoginRequiredMixin, View):
     def get(self, request):
         username_form = UsernameUpdateForm(instance=request.user)
         password_form = PasswordChangeForm(user=request.user)
-        # Можно открыть вкладку из ?tab=username|password при желании
         active_form = request.GET.get('tab')
         return render(request, '../templates/tasks/profile.html', {
             'username_form': username_form,
