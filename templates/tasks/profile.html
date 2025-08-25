@@ -24,6 +24,7 @@
         <div class="actions">
             <button type="button" class="btn" id="btn-username">Change username</button>
             <button type="button" class="btn secondary" id="btn-password">Change password</button>
+            <button type="button" class="btn" id="btn-logout">Log out</button>
         </div>
 
         <div class="panel" id="panel-username">
@@ -76,6 +77,14 @@
                 <div style="margin-top: .5rem;">
                     <button class="btn secondary" type="submit">Update password</button>
                 </div>
+            </form>
+        </div>
+    
+        <div class="panel" id="panel-logout">
+            <h3>You want to log out?</h3>
+            <form action="{% url 'logout' %}" method="post" id="btn-logout">
+                {% csrf_token %}
+                <button type="submit" class="btn">Log out</button>
             </form>
         </div>
     </div>

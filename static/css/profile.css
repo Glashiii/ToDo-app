@@ -49,8 +49,7 @@ h1 {
     border-radius: 8px;
 }
 
-#panel-username{
-     /*background-color: var(--foreground);*/
+#btn-logout{
 }
 
 .muted{

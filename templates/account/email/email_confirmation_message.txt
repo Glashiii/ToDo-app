@@ -1,0 +1,6 @@
+Hello, {{ user.username }}!
+
+To confirm your email, follow the link:
+{{ activate_url }}
+
+If you have not registered on {{ current_site.domain }}, simply ignore this email.

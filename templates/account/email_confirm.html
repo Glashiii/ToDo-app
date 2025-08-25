@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block head-content %}
+    <link rel="stylesheet" href="{% static 'css/LoginRegister.css' %}">
+{% endblock %}
+{% block title %}E-mail verification{% endblock %}
+
+{% block content %}
+    <div class="email-info left-side">
+        <h1>E-mail verification</h1>
+
+        {% if confirmation %}
+            <p>Submit registration on: {{ confirmation.email_address.email }}</p>
+            <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+                {% csrf_token %}
+                <button class="btn" type="submit">Approve</button>
+            </form>
+        {% else %}
+            <p>Url is deprecated</p>
+        {% endif %}
+    </div>
+{% endblock %}
