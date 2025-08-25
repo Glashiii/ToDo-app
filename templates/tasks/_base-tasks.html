@@ -19,6 +19,10 @@
         <nav>
             <a href="{% url 'tasks_list' %}">Tasks</a>
             <a href="{% url 'profile' %}">Profile</a>
+            <form action="{% url 'logout' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" id="logout-btn">Logout</button>
+            </form>
         </nav>
     </aside>
     <div class="task-content">
