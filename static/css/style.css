@@ -74,6 +74,7 @@ body {
 }
 
 .info-box {
+    padding: 15px;
     display: flex;
     flex-direction: column;
     background: var(--foreground);
@@ -108,6 +109,9 @@ body {
     width: 70%;
 }
 
+.helptext{
+    color: var(--main);
+}
 
 
 

@@ -5,7 +5,7 @@
     <form method="post" class="add-form">
         {% csrf_token %}
         {{ form.task_text }}         
-        <button class="btn" type="submit">Add</button>
+        <button class="btn" type="submit"><img src="../../static/images/add-svgrepo-com.svg" alt="Add"> </button>
     </form>
 
     <ul class="todo-ul">
@@ -15,13 +15,14 @@
                 <div class="form-actions">
                 <form action="{% url 'toggle' task.pk %}" method="post" style="display:inline;">
                     {% csrf_token %}
-                    <button class="btn check">{% if task.task_active %}✔{% else %}○{% endif %}</button>
+                    <button class="btn check">{% if task.task_active %}<img src="../../static/images/gui-approve-svgrepo-com.svg" alt="o"> 
+                    {% else %}<img src="../../static/images/cross-svgrepo-com.svg" alt="-"> {% endif %}</button>
                 </form>
                 <form action="{% url 'delete' task.pk %}"
                       method="post"
                       style="display:inline;">
                     {% csrf_token %}
-                    <button class="btn del" title="Delete">&times;</button>
+                    <button class="btn del" title="Delete"><img src="../../static/images/delete-2-svgrepo-com.svg" alt="X"> </button>
                 </form>
                 </div>
             </li>

@@ -1,5 +1,6 @@
 
 from allauth.account.models import EmailAddress
+from allauth.account.views import LoginView
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
@@ -48,6 +49,14 @@ class SignUpView(FormView):
 
 
         return redirect(self.get_success_url())
+
+class SimpleLoginView(LoginView):
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['login'].label = 'Username / email'
+        form.fields['login'].widget.attrs.setdefault('placeholder', 'Username или e‑mail')
+        return form
+
 
 from .forms import UsernameUpdateForm
 

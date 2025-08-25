@@ -162,6 +162,7 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_LOGIN_METHODS = {'email', 'username'}
+ACCOUNT_SESSION_REMEMBER = True
 
 AUTH_USER_MODEL = 'auth.User'
 LOGIN_REDIRECT_URL = '/tasks/'

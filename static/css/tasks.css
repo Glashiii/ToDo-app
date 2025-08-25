@@ -7,20 +7,20 @@
     --border: #595DB3;
 }
 
-body{
+body {
     font-family: "Heebo", sans-serif;
     padding: 0;
     margin: 0;
 }
 
-.main{
+.main {
     display: flex;
     height: 100vh;
     width: 100vw;
 }
 
 
-aside{
+aside {
     width: 25%;
     height: 100%;
     padding: 0;
@@ -30,11 +30,11 @@ aside{
     align-items: center;
     background: var(--main);
     color: var(--foreground);
-    font-size:16px;
+    font-size: 16px;
 }
 
 
-nav{
+nav {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -42,7 +42,7 @@ nav{
     flex-direction: column;
 }
 
-a{
+a {
     align-content: center;
     text-align: center;
     text-decoration: none;
@@ -57,12 +57,12 @@ a{
     border-color: var(--border);
 }
 
-a:hover{
+a:hover {
     background: var(--border);
     transition-duration: 0.2s;
 }
 
-.task-content{
+.task-content {
     margin-left: 25%;
     display: flex;
     flex-grow: 1;
@@ -70,8 +70,18 @@ a:hover{
     align-items: center;
 }
 
+.task-text {
+    --lines: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--lines);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 40px;
+}
 
-.add-form{
+.add-form {
     display: flex;
     justify-content: center;
     padding-bottom: 15px;
@@ -91,7 +101,7 @@ a:hover{
     font-size: 18px;
 }
 
-.btn{
+.btn {
     border: solid var(--border);
     border-width: 3px 3px 3px 0;
     border-radius: 0 3px 3px 0;
@@ -101,16 +111,17 @@ a:hover{
     height: 50px;
     width: 50px;
 }
-.btn form{
+
+.btn form {
     width: 100%;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: var(--border);
     transition-duration: 0.2s;
 }
 
-.todo-ul{
+.todo-ul {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -119,14 +130,15 @@ a:hover{
     margin-top: 3%;
     padding: 0;
 }
-.todo-ul li{
+
+.todo-ul li {
     margin: 1% 0;
     display: flex;
     width: 80%;
 }
 
 
-.task-text{
+.task-text {
     align-content: center;
     border: 3px solid var(--border);
     border-radius: 3px 0 0 3px;
@@ -139,37 +151,38 @@ a:hover{
     width: 82%;
 }
 
-.form-actions{
+.form-actions {
     display: flex;
 }
 
-.form-actions form{
+.form-actions form {
     width: 50px;
 }
 
-.del, .check{
+.del, .check {
     width: 100%;
     height: 100%;
 }
 
-.check{
+.check {
     border-radius: 0;
 }
 
-.undone p, .undone button{
+.undone p, .undone button {
     background-color: var(--light-main);
     border-color: var(--border-dull);
 }
-.undone button:hover{
+
+.undone button:hover {
     background-color: var(--border-dull);
     transition-duration: 0.2s;
 }
 
-.undone p{
+.undone p {
     text-decoration: line-through;
 }
 
-.nothing{
+.nothing {
     font-size: 24px;
     color: var(--border);
 }
