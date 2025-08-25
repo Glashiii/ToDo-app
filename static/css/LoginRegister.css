@@ -8,11 +8,13 @@
     --border: #595DB3;
 }
 
+
 .left-side {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 34%;
+    padding: 25px;
 }
 
 .left-side form {
@@ -60,39 +62,39 @@
     font-size: 24px;
 }
 
-.left-side button:hover{
+.left-side button:hover {
     background: var(--border);
     transition-duration: 0.2s;
 }
 
-.left-side ul{
-     list-style: none;
+.left-side ul {
+    list-style: none;
 }
 
-.left-side li{
+.left-side li {
     font-size: 20px;
 }
 
-.bottom{
+.bottom {
     display: flex;
     margin-top: 50px;
 }
 
-.bottom p{
+.bottom p {
     font-size: 24px;
     color: var(--dark);
 }
 
-.bottom a{
+.bottom a {
     color: var(--main);
 }
 
-.bottom a:hover{
+.bottom a:hover {
     color: var(--border);
     transition-duration: 0.2s;
 }
 
-.email-info{
+.email-info {
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -100,9 +102,19 @@
     width: 80%;
 }
 
-.email-info form{
+.email-info form {
     width: 80%;
 }
-.email-info button{
+
+.email-info button {
     width: 80%;
+}
+
+#url-login {
+    color: var(--main);
+    font-size: 24px;
+}
+
+#reset-pass-done p {
+    text-align: center;
 }

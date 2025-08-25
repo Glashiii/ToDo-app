@@ -9,42 +9,42 @@
 
 
 .pattern-container {
-  --bulb-width: 100px;
-  --bulb-height: 100px;
+    --bulb-width: 100px;
+    --bulb-height: 100px;
 
-  --h-gap: 150px;
-  --v-gap: 40px;
+    --h-gap: 150px;
+    --v-gap: 40px;
 
-  --bg-color: #6C71DB;
+    --bg-color: #6C71DB;
 
-  --img-r-gap: 70px;
+    --img-r-gap: 70px;
 
-  background-color: var(--bg-color);
-  position: relative;
-  z-index: 1;
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 1;
 
-  --cell-width: calc(var(--bulb-width) + var(--h-gap));
-  --cell-height: calc(var(--bulb-height) + var(--v-gap));
+    --cell-width: calc(var(--bulb-width) + var(--h-gap));
+    --cell-height: calc(var(--bulb-height) + var(--v-gap));
 
-  background-image: url('../images/lamp.svg');
-  background-repeat: repeat;
-  background-size: var(--cell-width) var(--cell-height);
-  background-position: var(--img-r-gap) 0;
+    background-image: url('../images/lamp.svg');
+    background-repeat: repeat;
+    background-size: var(--cell-width) var(--cell-height);
+    background-position: var(--img-r-gap) 0;
 }
 
 .pattern-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 
-  background-image: url('../images/lamp.svg');
-  background-repeat: repeat;
-  background-size: var(--cell-width) var(--cell-height);
-  background-position: calc(var(--cell-width) / 2 + var(--img-r-gap)) calc(var(--cell-height) / 2);
+    background-image: url('../images/lamp.svg');
+    background-repeat: repeat;
+    background-size: var(--cell-width) var(--cell-height);
+    background-position: calc(var(--cell-width) / 2 + var(--img-r-gap)) calc(var(--cell-height) / 2);
 }
 
 body {
@@ -83,6 +83,14 @@ body {
     width: 45%;
 }
 
+.info-bottom-content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 25px;
+}
+
 .header {
     display: flex;
     justify-content: center;
@@ -98,18 +106,19 @@ body {
 
 }
 
-.email-info{
+.email-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-left: 20px;
 
 }
-.email-info p{
+
+.email-info p {
     width: 70%;
 }
 
-.helptext{
+.helptext {
     color: var(--main);
 }
 
