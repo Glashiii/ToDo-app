@@ -73,3 +73,11 @@ h1 {
     border-width: 3px;
     margin: 0 10px;
 }
+@media (max-width: 650px) {
+    .btn{
+        width: 30%;
+    }
+    .panel{
+        width: 80%;
+    }
+}

@@ -122,7 +122,43 @@ body {
     color: var(--main);
 }
 
+.left-side-top-info{
+    display: none;
+    text-align: center;
+}
 
+@media (max-width: 1150px){
+
+    .info-box{
+        width: 60%;
+    }
+
+    .header{
+        font-size: 30px;
+    }
+
+    .info-text{
+        font-size: 24px;
+    }
+
+}
+
+@media (max-width: 550px){
+    .right-side{
+        display: none;
+    }
+    .left-side{
+        width: 100%;
+    }
+    .left-side-top-info{
+        display: block;
+    }
+    .left-side-top-info h1{
+        font-size: 36px;
+        color: var(--border);
+    }
+
+}
 
 
 

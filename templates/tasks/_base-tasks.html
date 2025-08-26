@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/tasks.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +22,14 @@
             <a href="{% url 'profile' %}">Profile</a>
         </nav>
     </aside>
+
     <div class="task-content">
+        <div class="top-bar">
+            <nav>
+                <a id="btn-tasks" href="{% url 'tasks_list' %}"><img src="../../static/images/list-svgrepo-com.svg" alt="Tasks"></a>
+                <a id="btn-profile" href="{% url 'profile' %}"><img src="../../static/images/profile-round-1342-svgrepo-com.svg" alt="Profile"></a>
+            </nav>
+        </div>
 
         {% block content %}
 

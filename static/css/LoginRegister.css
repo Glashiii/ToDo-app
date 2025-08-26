@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 34%;
+
     padding: 25px;
 }
 
@@ -117,4 +117,50 @@
 
 #reset-pass-done p {
     text-align: center;
+}
+
+@media (max-width: 1150px) {
+    .left-side{
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .left-side{
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .left-side h2{
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 40px;
+    }
+
+    .left-side p, label{
+        font-size: 16px;
+    }
+    .left-side input{
+        height: 35px;
+        font-size: 16px;
+    }
+    .left-side button{
+        margin-top: 10px;
+        height: 50px;
+    }
+    .bottom{
+        margin-top: 20px;
+    }
+
+    .left-side ul{
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+    }
+    .left-side li{
+        font-size: 14px;
+    }
 }

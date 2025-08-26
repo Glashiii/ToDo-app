@@ -186,3 +186,48 @@ a:hover {
     font-size: 24px;
     color: var(--border);
 }
+
+.top-bar{
+    display: none;
+}
+#btn-tasks{
+    width: calc(100% - 2px);
+}
+#btn-profile{
+
+    border-left: 0;
+}
+
+@media (max-width: 650px) {
+    .top-bar{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    aside{
+        display: none;
+    }
+
+    .task-content{
+        margin: 0;
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .add-form input{
+        margin-left: 5px;
+    }
+    .add-form button{
+        margin-right: 5px;
+    }
+    .todo-ul{
+        width: 110%;
+    }
+    .task-text{
+        height: 40px;
+    }
+
+}
