@@ -30,7 +30,6 @@ EMAIL_USE_SSL = env.bool('EMAIL_USE_SSL', default=False)
 EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default=EMAIL_HOST_USER or 'no-reply@example.com')
-
 # allauth / Sites
 SITE_ID = env.int('SITE_ID', default=1)
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = env('ACCOUNT_DEFAULT_HTTP_PROTOCOL', default='http')
@@ -126,15 +125,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+import os
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import os
 
 
 EMAIL_TIMEOUT = 10
