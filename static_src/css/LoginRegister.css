@@ -1,0 +1,166 @@
+:root {
+    --main: #6C71DB;
+    /*--hover: #6C71DB;*/
+    --foreground: #F5F5F5;
+    --light-main: #8E86A1;
+    --border-dull: #6F638B;
+    --dark: #2B2732;
+    --border: #595DB3;
+}
+
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding: 25px;
+}
+
+.left-side form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.left-side h2 {
+    font-weight: 600;
+    font-size: 64px;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.left-side p {
+    display: flex;
+    flex-direction: column;
+    color: var(--dark);
+    font-weight: 400;
+    font-size: 24px;
+    width: 100%;
+    margin: 8px 0;
+}
+
+.left-side input {
+    border: 2px solid var(--light-main);
+    border-radius: 3px;
+    width: 100%;
+    padding-left: 10px;
+    height: 50px;
+    background: var(--foreground);
+    font-size: 30px;
+}
+
+.left-side button {
+    margin-top: 40px;
+    width: 50%;
+    height: 60px;
+    background: var(--main);
+    border: 0;
+    border-radius: 3px;
+    color: var(--foreground);
+    font-size: 24px;
+}
+
+.left-side button:hover {
+    background: var(--border);
+    transition-duration: 0.2s;
+}
+
+.left-side ul {
+    list-style: none;
+}
+
+.left-side li {
+    font-size: 20px;
+}
+
+.bottom {
+    display: flex;
+    margin-top: 50px;
+}
+
+.bottom p {
+    font-size: 24px;
+    color: var(--dark);
+}
+
+.bottom a {
+    color: var(--main);
+}
+
+.bottom a:hover {
+    color: var(--border);
+    transition-duration: 0.2s;
+}
+
+.email-info {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 80%;
+}
+
+.email-info form {
+    width: 80%;
+}
+
+.email-info button {
+    width: 80%;
+}
+
+#url-login {
+    color: var(--main);
+    font-size: 24px;
+}
+
+#reset-pass-done p {
+    text-align: center;
+}
+
+@media (max-width: 1150px) {
+    .left-side{
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .left-side{
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .left-side h2{
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 40px;
+    }
+
+    .left-side p, label{
+        font-size: 16px;
+    }
+    .left-side input{
+        height: 35px;
+        font-size: 16px;
+    }
+    .left-side button{
+        margin-top: 10px;
+        height: 50px;
+    }
+    .bottom{
+        margin-top: 20px;
+    }
+
+    .left-side ul{
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+    }
+    .left-side li{
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,233 @@
+:root {
+    --main: #6C71DB;
+    --foreground: #F5F5F5;
+    --light-main: #8E86A1;
+    --border-dull: #6F638B;
+    --dark: #2B2732;
+    --border: #595DB3;
+}
+
+body {
+    font-family: "Heebo", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+aside {
+    width: 25%;
+    height: 100%;
+    padding: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--main);
+    color: var(--foreground);
+    font-size: 16px;
+}
+
+
+nav {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    align-content: center;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    height: 80px;
+    background: var(--main);
+    color: var(--foreground);
+    font-size: 20px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 0 3px 3px 3px;
+    border-color: var(--border);
+}
+
+a:hover {
+    background: var(--border);
+    transition-duration: 0.2s;
+}
+
+.task-content {
+    margin-left: 25%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-text {
+    --lines: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--lines);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 40px;
+}
+
+.add-form {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 100%;
+    height: 50px;
+}
+
+.add-form input {
+    border: 3px solid var(--border);
+    border-radius: 3px 0 0 3px;
+    width: 85%;
+    padding: 0 0 0 10px;
+    margin: 0 0 0 25px;
+    box-sizing: border-box;
+    height: 50px;
+    font-size: 18px;
+}
+
+.btn {
+    border: solid var(--border);
+    border-width: 3px 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+    background-color: var(--main);
+    color: var(--foreground);
+    padding: 0;
+    height: 50px;
+    width: 50px;
+}
+
+.btn form {
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: var(--border);
+    transition-duration: 0.2s;
+}
+
+.todo-ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    margin-top: 3%;
+    padding: 0;
+}
+
+.todo-ul li {
+    margin: 1% 0;
+    display: flex;
+    width: 80%;
+}
+
+
+.task-text {
+    align-content: center;
+    border: 3px solid var(--border);
+    border-radius: 3px 0 0 3px;
+    background-color: var(--main);
+    color: var(--foreground);
+    padding-left: 10px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0;
+    width: 82%;
+}
+
+.form-actions {
+    display: flex;
+}
+
+.form-actions form {
+    width: 50px;
+}
+
+.del, .check {
+    width: 100%;
+    height: 100%;
+}
+
+.check {
+    border-radius: 0;
+}
+
+.undone p, .undone button {
+    background-color: var(--light-main);
+    border-color: var(--border-dull);
+}
+
+.undone button:hover {
+    background-color: var(--border-dull);
+    transition-duration: 0.2s;
+}
+
+.undone p {
+    text-decoration: line-through;
+}
+
+.nothing {
+    font-size: 24px;
+    color: var(--border);
+}
+
+.top-bar{
+    display: none;
+}
+#btn-tasks{
+    width: calc(100% - 2px);
+}
+#btn-profile{
+
+    border-left: 0;
+}
+
+@media (max-width: 650px) {
+    .top-bar{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    aside{
+        display: none;
+    }
+
+    .task-content{
+        margin: 0;
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .add-form input{
+        margin-left: 5px;
+    }
+    .add-form button{
+        margin-right: 5px;
+    }
+    .todo-ul{
+        width: 110%;
+    }
+    .task-text{
+        height: 40px;
+    }
+
+}
